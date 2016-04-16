@@ -7,7 +7,7 @@
 //
 
 #import "UIView+DGLayoutAnchor.h"
-#import <objc/objc-runtime.h>
+#import <objc/runtime.h>
 
 #if __ENVIRONMENT_IPHONE_OS_VERSION_MIN_REQUIRED__ < 90000
 UIKIT_EXTERN const char *dg_layout_item;

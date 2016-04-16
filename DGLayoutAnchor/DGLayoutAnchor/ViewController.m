@@ -40,27 +40,33 @@
     [self.view addSubview:v4];
     
     // constraints with top & leading & bottom & trailing
-    [v1.dg_topAnchor constraintEqualToAnchor:self.view.dg_topAnchor constant:20].active = YES;
-    [v1.dg_leadingAnchor constraintEqualToAnchor:self.view.dg_leadingAnchor constant:20].active = YES;
-    [v1.dg_bottomAnchor constraintEqualToAnchor:v3.dg_topAnchor constant:-20].active = YES;
+    NSLayoutConstraint *lc1 = [v1.dg_topAnchor constraintEqualToAnchor:self.view.dg_topAnchor constant:20];
+    NSLayoutConstraint *lc2 = [v1.dg_leadingAnchor constraintEqualToAnchor:self.view.dg_leadingAnchor constant:20];
+    NSLayoutConstraint *lc3 = [v1.dg_bottomAnchor constraintEqualToAnchor:v3.dg_topAnchor constant:-20];
     
-    [v2.dg_topAnchor constraintEqualToAnchor:v1.dg_topAnchor].active = YES;
-    [v2.dg_leadingAnchor constraintEqualToAnchor:v1.dg_trailingAnchor constant:20].active = YES;
-    [v2.dg_bottomAnchor constraintEqualToAnchor:v4.dg_topAnchor constant:-20].active = YES;
-    [v2.dg_trailingAnchor constraintEqualToAnchor:self.view.dg_trailingAnchor constant:-20].active = YES;
+    NSLayoutConstraint *lc4 = [v2.dg_topAnchor constraintEqualToAnchor:v1.dg_topAnchor];
+    NSLayoutConstraint *lc5 = [v2.dg_leadingAnchor constraintEqualToAnchor:v1.dg_trailingAnchor constant:20];
+    NSLayoutConstraint *lc6 = [v2.dg_bottomAnchor constraintEqualToAnchor:v4.dg_topAnchor constant:-20];
+    NSLayoutConstraint *lc7 = [v2.dg_trailingAnchor constraintEqualToAnchor:self.view.dg_trailingAnchor constant:-20];
     
-    [v3.dg_leadingAnchor constraintEqualToAnchor:self.view.dg_leadingAnchor constant:20].active = YES;
-    [v3.dg_bottomAnchor constraintEqualToAnchor:self.view.dg_bottomAnchor constant:-20].active = YES;
-    [v3.dg_trailingAnchor constraintEqualToAnchor:v4.dg_leadingAnchor constant:-20].active = YES;
-
-    [v4.dg_bottomAnchor constraintEqualToAnchor:self.view.dg_bottomAnchor constant:-20].active = YES;
-    [v4.dg_trailingAnchor constraintEqualToAnchor:self.view.dg_trailingAnchor constant:-20].active = YES;
+    NSLayoutConstraint *lc8 = [v3.dg_leadingAnchor constraintEqualToAnchor:self.view.dg_leadingAnchor constant:20];
+    NSLayoutConstraint *lc9 = [v3.dg_bottomAnchor constraintEqualToAnchor:self.view.dg_bottomAnchor constant:-20];
+    NSLayoutConstraint *lc10 = [v3.dg_trailingAnchor constraintEqualToAnchor:v4.dg_leadingAnchor constant:-20];
+    
+    NSLayoutConstraint *lc11 = [v4.dg_bottomAnchor constraintEqualToAnchor:self.view.dg_bottomAnchor constant:-20];
+    NSLayoutConstraint *lc12 = [v4.dg_trailingAnchor constraintEqualToAnchor:self.view.dg_trailingAnchor constant:-20];
     
     // constraints with width & height
-    [v1.dg_widthAnchor constraintEqualToAnchor:v2.dg_widthAnchor multiplier:0.25].active = YES;
-    [v1.dg_heightAnchor constraintEqualToAnchor:v3.dg_heightAnchor].active = YES;
-    [v2.dg_heightAnchor constraintEqualToAnchor:v4.dg_heightAnchor].active = YES;
-    [v3.dg_widthAnchor constraintEqualToAnchor:v4.dg_widthAnchor].active = YES;
+    NSLayoutConstraint *lc13 = [v1.dg_widthAnchor constraintEqualToAnchor:v2.dg_widthAnchor multiplier:0.25];
+    NSLayoutConstraint *lc14 = [v1.dg_heightAnchor constraintEqualToAnchor:v3.dg_heightAnchor];
+    NSLayoutConstraint *lc15 = [v2.dg_heightAnchor constraintEqualToAnchor:v4.dg_heightAnchor];
+    NSLayoutConstraint *lc16 = [v3.dg_widthAnchor constraintEqualToAnchor:v4.dg_widthAnchor];
+    
+#if __ENVIRONMENT_IPHONE_OS_VERSION_MIN_REQUIRED__ >= 80000
+    lc1.active = lc2.active = lc3.active = lc4.active = lc5.active = lc6.active = lc7.active = lc8.active = lc9.active = lc10.active = lc11.active = lc12.active = lc13.active = lc14.active = lc15.active = lc16.active = YES;
+#elif __ENVIRONMENT_IPHONE_OS_VERSION_MIN_REQUIRED__ >= 60000
+    [self.view addConstraints:@[lc1, lc2, lc3, lc4, lc5, lc6, lc7, lc8, lc9, lc10, lc11, lc12, lc13, lc14, lc15, lc16]];
+#endif
 }
 
 - (void)didReceiveMemoryWarning {
