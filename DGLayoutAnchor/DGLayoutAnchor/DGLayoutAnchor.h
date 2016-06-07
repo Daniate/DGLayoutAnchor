@@ -10,13 +10,14 @@
 
 #if __ENVIRONMENT_IPHONE_OS_VERSION_MIN_REQUIRED__ >= 90000
 
-#define DGLayoutAnchor NSLayoutAnchor
+#define DGLayoutAnchor      NSLayoutAnchor
 #define DGLayoutXAxisAnchor NSLayoutXAxisAnchor
 #define DGLayoutYAxisAnchor NSLayoutYAxisAnchor
-#define DGLayoutDimension NSLayoutDimension
+#define DGLayoutDimension   NSLayoutDimension
 
 #else
 
+NS_CLASS_AVAILABLE_IOS(6_0)
 @interface DGLayoutAnchor<AnchorType> : NSObject
 /* These methods return an inactive constraint of the form thisAnchor = otherAnchor.
  */
