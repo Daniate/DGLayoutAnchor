@@ -63,9 +63,17 @@
     NSLayoutConstraint *lc16 = [v3.dg_widthAnchor constraintEqualToAnchor:v4.dg_widthAnchor];
     
 #if __ENVIRONMENT_IPHONE_OS_VERSION_MIN_REQUIRED__ >= 80000
-    lc1.active = lc2.active = lc3.active = lc4.active = lc5.active = lc6.active = lc7.active = lc8.active = lc9.active = lc10.active = lc11.active = lc12.active = lc13.active = lc14.active = lc15.active = lc16.active = YES;
+    lc1.active = lc2.active = lc3.active = lc4.active =
+    lc5.active = lc6.active = lc7.active = lc8.active =
+    lc9.active = lc10.active = lc11.active = lc12.active =
+    lc13.active = lc14.active = lc15.active = lc16.active = YES;
 #elif __ENVIRONMENT_IPHONE_OS_VERSION_MIN_REQUIRED__ >= 60000
-    [self.view addConstraints:@[lc1, lc2, lc3, lc4, lc5, lc6, lc7, lc8, lc9, lc10, lc11, lc12, lc13, lc14, lc15, lc16]];
+    [self.view addConstraints:@[
+                                lc1, lc2, lc3, lc4,
+                                lc5, lc6, lc7, lc8,
+                                lc9, lc10, lc11, lc12,
+                                lc13, lc14, lc15, lc16
+                                ]];
 #endif
 }
 

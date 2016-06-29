@@ -11,17 +11,17 @@
 
 #if __ENVIRONMENT_IPHONE_OS_VERSION_MIN_REQUIRED__ < 90000
 
-const char *dg_layout_item = "dg_layout_item";
-const char *dg_layout_attribute = "dg_layout_attribute";
+const char *dg_layout_anchor_item = "dg_layout_anchor_item";// Associate View
+const char *dg_layout_anchor_attribute = "dg_layout_anchor_attribute";// Associate Number of NSLayoutAttribute
 
 @implementation DGLayoutAnchor
 #pragma - private
 - (NSLayoutConstraint *)constraintWithAnchor:(DGLayoutAnchor *)anchor relatedBy:(NSLayoutRelation)relation constant:(CGFloat)c {
-    UIView *v1 = objc_getAssociatedObject(self, dg_layout_item);
-    UIView *v2 = objc_getAssociatedObject(anchor, dg_layout_item);
+    UIView *v1 = objc_getAssociatedObject(self, dg_layout_anchor_item);
+    UIView *v2 = objc_getAssociatedObject(anchor, dg_layout_anchor_item);
     
-    NSLayoutAttribute attr1 = [objc_getAssociatedObject(self, dg_layout_attribute) integerValue];
-    NSLayoutAttribute attr2 = [objc_getAssociatedObject(anchor, dg_layout_attribute) integerValue];
+    NSLayoutAttribute attr1 = [objc_getAssociatedObject(self, dg_layout_anchor_attribute) integerValue];
+    NSLayoutAttribute attr2 = [objc_getAssociatedObject(anchor, dg_layout_anchor_attribute) integerValue];
     
     return [NSLayoutConstraint constraintWithItem:v1 attribute:attr1 relatedBy:relation toItem:v2 attribute:attr2 multiplier:1 constant:c];
 }
@@ -63,18 +63,18 @@ const char *dg_layout_attribute = "dg_layout_attribute";
 @implementation DGLayoutDimension
 #pragma - private
 - (NSLayoutConstraint *)constraintRelatedBy:(NSLayoutRelation)relation constant:(CGFloat)c {
-    UIView *v1 = objc_getAssociatedObject(self, dg_layout_item);
+    UIView *v1 = objc_getAssociatedObject(self, dg_layout_anchor_item);
     
-    NSLayoutAttribute attr1 = [objc_getAssociatedObject(self, dg_layout_attribute) integerValue];
+    NSLayoutAttribute attr = [objc_getAssociatedObject(self, dg_layout_anchor_attribute) integerValue];
     
-    return [NSLayoutConstraint constraintWithItem:v1 attribute:attr1 relatedBy:relation toItem:nil attribute:attr1 multiplier:0 constant:c];
+    return [NSLayoutConstraint constraintWithItem:v1 attribute:attr relatedBy:relation toItem:nil attribute:attr multiplier:0 constant:c];
 }
 - (NSLayoutConstraint *)constraintWithAnchor:(DGLayoutDimension *)anchor relatedBy:(NSLayoutRelation)relation multiplier:(CGFloat)m constant:(CGFloat)c {
-    UIView *v1 = objc_getAssociatedObject(self, dg_layout_item);
-    UIView *v2 = objc_getAssociatedObject(anchor, dg_layout_item);
-    
-    NSLayoutAttribute attr1 = [objc_getAssociatedObject(self, dg_layout_attribute) integerValue];
-    NSLayoutAttribute attr2 = [objc_getAssociatedObject(anchor, dg_layout_attribute) integerValue];
+    UIView *v1 = objc_getAssociatedObject(self, dg_layout_anchor_item);
+    UIView *v2 = objc_getAssociatedObject(anchor, dg_layout_anchor_item);
+	
+    NSLayoutAttribute attr1 = [objc_getAssociatedObject(self, dg_layout_anchor_attribute) integerValue];
+    NSLayoutAttribute attr2 = [objc_getAssociatedObject(anchor, dg_layout_anchor_attribute) integerValue];
     
     return [NSLayoutConstraint constraintWithItem:v1 attribute:attr1 relatedBy:relation toItem:v2 attribute:attr2 multiplier:m constant:c];
 }
