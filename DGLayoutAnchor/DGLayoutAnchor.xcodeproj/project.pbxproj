@@ -15,6 +15,7 @@
 		142534D81CC1F0AD0055FA2D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 142534D61CC1F0AD0055FA2D /* LaunchScreen.storyboard */; };
 		142534E11CC1F0EB0055FA2D /* UIView+DGLayoutAnchor.m in Sources */ = {isa = PBXBuildFile; fileRef = 142534E01CC1F0EB0055FA2D /* UIView+DGLayoutAnchor.m */; };
 		142534E41CC1F1300055FA2D /* DGLayoutAnchor.m in Sources */ = {isa = PBXBuildFile; fileRef = 142534E31CC1F1300055FA2D /* DGLayoutAnchor.m */; };
+		14873EC91DD46E6700F7F41C /* UIViewController+DGLayoutAnchor.m in Sources */ = {isa = PBXBuildFile; fileRef = 14873EC81DD46E6700F7F41C /* UIViewController+DGLayoutAnchor.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,8 @@
 		142534E01CC1F0EB0055FA2D /* UIView+DGLayoutAnchor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+DGLayoutAnchor.m"; sourceTree = "<group>"; };
 		142534E21CC1F1300055FA2D /* DGLayoutAnchor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGLayoutAnchor.h; sourceTree = "<group>"; };
 		142534E31CC1F1300055FA2D /* DGLayoutAnchor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGLayoutAnchor.m; sourceTree = "<group>"; };
+		14873EC71DD46E6700F7F41C /* UIViewController+DGLayoutAnchor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+DGLayoutAnchor.h"; sourceTree = "<group>"; };
+		14873EC81DD46E6700F7F41C /* UIViewController+DGLayoutAnchor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+DGLayoutAnchor.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +75,8 @@
 				142534E31CC1F1300055FA2D /* DGLayoutAnchor.m */,
 				142534DF1CC1F0EB0055FA2D /* UIView+DGLayoutAnchor.h */,
 				142534E01CC1F0EB0055FA2D /* UIView+DGLayoutAnchor.m */,
+				14873EC71DD46E6700F7F41C /* UIViewController+DGLayoutAnchor.h */,
+				14873EC81DD46E6700F7F41C /* UIViewController+DGLayoutAnchor.m */,
 				142534D11CC1F0AD0055FA2D /* Main.storyboard */,
 				142534D41CC1F0AD0055FA2D /* Assets.xcassets */,
 				142534D61CC1F0AD0055FA2D /* LaunchScreen.storyboard */,
@@ -115,11 +120,12 @@
 		142534BD1CC1F0AD0055FA2D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = Daniate;
 				TargetAttributes = {
 					142534C41CC1F0AD0055FA2D = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = TUMV96N6ER;
 					};
 				};
 			};
@@ -163,6 +169,7 @@
 				142534E11CC1F0EB0055FA2D /* UIView+DGLayoutAnchor.m in Sources */,
 				142534CD1CC1F0AD0055FA2D /* AppDelegate.m in Sources */,
 				142534CA1CC1F0AD0055FA2D /* main.m in Sources */,
+				14873EC91DD46E6700F7F41C /* UIViewController+DGLayoutAnchor.m in Sources */,
 				142534E41CC1F1300055FA2D /* DGLayoutAnchor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -203,8 +210,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -247,8 +256,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -275,8 +286,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = TUMV96N6ER;
 				INFOPLIST_FILE = DGLayoutAnchor/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.daniate.DGLayoutAnchor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -287,8 +299,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = TUMV96N6ER;
 				INFOPLIST_FILE = DGLayoutAnchor/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.daniate.DGLayoutAnchor;
 				PRODUCT_NAME = "$(TARGET_NAME)";

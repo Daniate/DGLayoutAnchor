@@ -9,180 +9,112 @@
 #import "UIView+DGLayoutAnchor.h"
 #import <objc/runtime.h>
 
-#if __ENVIRONMENT_IPHONE_OS_VERSION_MIN_REQUIRED__ < 90000
-UIKIT_EXTERN const char *dg_layout_anchor_item;// Associate View
-UIKIT_EXTERN const char *dg_layout_anchor_attribute;// Associate Number of NSLayoutAttribute
-#endif
+UIKIT_EXTERN const void *dg_layout_anchor_item;
+UIKIT_EXTERN const void *dg_layout_anchor_attribute;
+
+#define DGLayoutAnchorForView(__CLASS_NAME__, __LAYOUT_ATTRIBUTE__) (__CLASS_NAME__ *)[self _anchorWithClass:[__CLASS_NAME__ class] key:_cmd attribute:__LAYOUT_ATTRIBUTE__]
 
 @implementation UIView (DGLayoutAnchor)
-- (DGLayoutXAxisAnchor *)dg_leadingAnchor {
-#if __ENVIRONMENT_IPHONE_OS_VERSION_MIN_REQUIRED__ < 90000
-    DGLayoutXAxisAnchor *anchor = objc_getAssociatedObject(self, _cmd);
-    if (!anchor) {
-        anchor = [[DGLayoutXAxisAnchor alloc] init];
-        objc_setAssociatedObject(anchor, dg_layout_anchor_attribute, @(NSLayoutAttributeLeading), OBJC_ASSOCIATION_COPY);
-        objc_setAssociatedObject(anchor, dg_layout_anchor_item, self, OBJC_ASSOCIATION_ASSIGN);
-        objc_setAssociatedObject(self, _cmd, anchor, OBJC_ASSOCIATION_RETAIN);
-    }
-    return anchor;
-#else
-    return self.leadingAnchor;// see UIView (UIViewLayoutConstraintCreation)
-#endif
-}
-- (DGLayoutXAxisAnchor *)dg_trailingAnchor {
-#if __ENVIRONMENT_IPHONE_OS_VERSION_MIN_REQUIRED__ < 90000
-    DGLayoutXAxisAnchor *anchor = objc_getAssociatedObject(self, _cmd);
-    if (!anchor) {
-        anchor = [[DGLayoutXAxisAnchor alloc] init];
-        objc_setAssociatedObject(anchor, dg_layout_anchor_attribute, @(NSLayoutAttributeTrailing), OBJC_ASSOCIATION_COPY);
-        objc_setAssociatedObject(anchor, dg_layout_anchor_item, self, OBJC_ASSOCIATION_ASSIGN);
-        objc_setAssociatedObject(self, _cmd, anchor, OBJC_ASSOCIATION_RETAIN);
-    }
-    return anchor;
-#else
-    return self.trailingAnchor;// see UIView (UIViewLayoutConstraintCreation)
-#endif
-}
-- (DGLayoutXAxisAnchor *)dg_leftAnchor {
-#if __ENVIRONMENT_IPHONE_OS_VERSION_MIN_REQUIRED__ < 90000
-    DGLayoutXAxisAnchor *anchor = objc_getAssociatedObject(self, _cmd);
-    if (!anchor) {
-        anchor = [[DGLayoutXAxisAnchor alloc] init];
-        objc_setAssociatedObject(anchor, dg_layout_anchor_attribute, @(NSLayoutAttributeLeft), OBJC_ASSOCIATION_COPY);
-        objc_setAssociatedObject(anchor, dg_layout_anchor_item, self, OBJC_ASSOCIATION_ASSIGN);
-        objc_setAssociatedObject(self, _cmd, anchor, OBJC_ASSOCIATION_RETAIN);
-    }
-    return anchor;
-#else
-    return self.leftAnchor;// see UIView (UIViewLayoutConstraintCreation)
-#endif
-}
-- (DGLayoutXAxisAnchor *)dg_rightAnchor {
-#if __ENVIRONMENT_IPHONE_OS_VERSION_MIN_REQUIRED__ < 90000
-    DGLayoutXAxisAnchor *anchor = objc_getAssociatedObject(self, _cmd);
-    if (!anchor) {
-        anchor = [[DGLayoutXAxisAnchor alloc] init];
-        objc_setAssociatedObject(anchor, dg_layout_anchor_attribute, @(NSLayoutAttributeRight), OBJC_ASSOCIATION_COPY);
-        objc_setAssociatedObject(anchor, dg_layout_anchor_item, self, OBJC_ASSOCIATION_ASSIGN);
-        objc_setAssociatedObject(self, _cmd, anchor, OBJC_ASSOCIATION_RETAIN);
-    }
-    return anchor;
-#else
-    return self.rightAnchor;// see UIView (UIViewLayoutConstraintCreation)
-#endif
-}
-- (DGLayoutYAxisAnchor *)dg_topAnchor {
-#if __ENVIRONMENT_IPHONE_OS_VERSION_MIN_REQUIRED__ < 90000
-    DGLayoutYAxisAnchor *anchor = objc_getAssociatedObject(self, _cmd);
-    if (!anchor) {
-        anchor = [[DGLayoutYAxisAnchor alloc] init];
-        objc_setAssociatedObject(anchor, dg_layout_anchor_attribute, @(NSLayoutAttributeTop), OBJC_ASSOCIATION_COPY);
-        objc_setAssociatedObject(anchor, dg_layout_anchor_item, self, OBJC_ASSOCIATION_ASSIGN);
-        objc_setAssociatedObject(self, _cmd, anchor, OBJC_ASSOCIATION_RETAIN);
-    }
-    return anchor;
-#else
-    return self.topAnchor;// see UIView (UIViewLayoutConstraintCreation)
-#endif
-}
-- (DGLayoutYAxisAnchor *)dg_bottomAnchor {
-#if __ENVIRONMENT_IPHONE_OS_VERSION_MIN_REQUIRED__ < 90000
-    DGLayoutYAxisAnchor *anchor = objc_getAssociatedObject(self, _cmd);
-    if (!anchor) {
-        anchor = [[DGLayoutYAxisAnchor alloc] init];
-        objc_setAssociatedObject(anchor, dg_layout_anchor_attribute, @(NSLayoutAttributeBottom), OBJC_ASSOCIATION_COPY);
-        objc_setAssociatedObject(anchor, dg_layout_anchor_item, self, OBJC_ASSOCIATION_ASSIGN);
-        objc_setAssociatedObject(self, _cmd, anchor, OBJC_ASSOCIATION_RETAIN);
-    }
-    return anchor;
-#else
-    return self.bottomAnchor;// see UIView (UIViewLayoutConstraintCreation)
-#endif
-}
-- (DGLayoutDimension *)dg_widthAnchor {
-#if __ENVIRONMENT_IPHONE_OS_VERSION_MIN_REQUIRED__ < 90000
-    DGLayoutDimension *anchor = objc_getAssociatedObject(self, _cmd);
-    if (!anchor) {
-        anchor = [[DGLayoutDimension alloc] init];
-        objc_setAssociatedObject(anchor, dg_layout_anchor_attribute, @(NSLayoutAttributeWidth), OBJC_ASSOCIATION_COPY);
-        objc_setAssociatedObject(anchor, dg_layout_anchor_item, self, OBJC_ASSOCIATION_ASSIGN);
-        objc_setAssociatedObject(self, _cmd, anchor, OBJC_ASSOCIATION_RETAIN);
-    }
-    return anchor;
-#else
-    return self.widthAnchor;// see UIView (UIViewLayoutConstraintCreation)
-#endif
-}
-- (DGLayoutDimension *)dg_heightAnchor {
-#if __ENVIRONMENT_IPHONE_OS_VERSION_MIN_REQUIRED__ < 90000
-    DGLayoutDimension *anchor = objc_getAssociatedObject(self, _cmd);
-    if (!anchor) {
-        anchor = [[DGLayoutDimension alloc] init];
-        objc_setAssociatedObject(anchor, dg_layout_anchor_attribute, @(NSLayoutAttributeHeight), OBJC_ASSOCIATION_COPY);
-        objc_setAssociatedObject(anchor, dg_layout_anchor_item, self, OBJC_ASSOCIATION_ASSIGN);
-        objc_setAssociatedObject(self, _cmd, anchor, OBJC_ASSOCIATION_RETAIN);
-    }
-    return anchor;
-#else
-    return self.heightAnchor;// see UIView (UIViewLayoutConstraintCreation)
-#endif
-}
-- (DGLayoutXAxisAnchor *)dg_centerXAnchor {
-#if __ENVIRONMENT_IPHONE_OS_VERSION_MIN_REQUIRED__ < 90000
-    DGLayoutXAxisAnchor *anchor = objc_getAssociatedObject(self, _cmd);
-    if (!anchor) {
-        anchor = [[DGLayoutXAxisAnchor alloc] init];
-        objc_setAssociatedObject(anchor, dg_layout_anchor_attribute, @(NSLayoutAttributeCenterX), OBJC_ASSOCIATION_COPY);
-        objc_setAssociatedObject(anchor, dg_layout_anchor_item, self, OBJC_ASSOCIATION_ASSIGN);
-        objc_setAssociatedObject(self, _cmd, anchor, OBJC_ASSOCIATION_RETAIN);
-    }
-    return anchor;
-#else
-    return self.centerXAnchor;// see UIView (UIViewLayoutConstraintCreation)
-#endif
-}
-- (DGLayoutYAxisAnchor *)dg_centerYAnchor {
-#if __ENVIRONMENT_IPHONE_OS_VERSION_MIN_REQUIRED__ < 90000
-    DGLayoutYAxisAnchor *anchor = objc_getAssociatedObject(self, _cmd);
-    if (!anchor) {
-        anchor = [[DGLayoutYAxisAnchor alloc] init];
-        objc_setAssociatedObject(anchor, dg_layout_anchor_attribute, @(NSLayoutAttributeCenterY), OBJC_ASSOCIATION_COPY);
-        objc_setAssociatedObject(anchor, dg_layout_anchor_item, self, OBJC_ASSOCIATION_ASSIGN);
-        objc_setAssociatedObject(self, _cmd, anchor, OBJC_ASSOCIATION_RETAIN);
-    }
-    return anchor;
-#else
-    return self.centerYAnchor;// see UIView (UIViewLayoutConstraintCreation)
-#endif
-}
-- (DGLayoutYAxisAnchor *)dg_firstBaselineAnchor {
-#if __ENVIRONMENT_IPHONE_OS_VERSION_MIN_REQUIRED__ < 90000
-    DGLayoutYAxisAnchor *anchor = objc_getAssociatedObject(self, _cmd);
-    if (!anchor) {
-        anchor = [[DGLayoutYAxisAnchor alloc] init];
-        objc_setAssociatedObject(anchor, dg_layout_anchor_attribute, @(NSLayoutAttributeFirstBaseline), OBJC_ASSOCIATION_COPY);
-        objc_setAssociatedObject(anchor, dg_layout_anchor_item, self, OBJC_ASSOCIATION_ASSIGN);
-        objc_setAssociatedObject(self, _cmd, anchor, OBJC_ASSOCIATION_RETAIN);
-    }
-    return anchor;
-#else
-    return self.firstBaselineAnchor;// see UIView (UIViewLayoutConstraintCreation)
-#endif
-}
-- (DGLayoutYAxisAnchor *)dg_lastBaselineAnchor {
-#if __ENVIRONMENT_IPHONE_OS_VERSION_MIN_REQUIRED__ < 90000
-    DGLayoutYAxisAnchor *anchor = objc_getAssociatedObject(self, _cmd);
-    if (!anchor) {
-        anchor = [[DGLayoutYAxisAnchor alloc] init];
-		// NSLayoutAttributeLastBaseline = NSLayoutAttributeBaseline, but NSLayoutAttributeLastBaseline is available in iOS 8.0 and later.
-        objc_setAssociatedObject(anchor, dg_layout_anchor_attribute, @(NSLayoutAttributeBaseline), OBJC_ASSOCIATION_COPY);
-        objc_setAssociatedObject(anchor, dg_layout_anchor_item, self, OBJC_ASSOCIATION_ASSIGN);
-        objc_setAssociatedObject(self, _cmd, anchor, OBJC_ASSOCIATION_RETAIN);
-    }
-    return anchor;
-#else
-    return self.lastBaselineAnchor;// see UIView (UIViewLayoutConstraintCreation)
-#endif
-}
-@end
 
+#pragma mark - private
+- (DGLayoutAnchor *)_anchorWithClass:(Class)clazz key:(const void *)key attribute:(NSLayoutAttribute)attr {
+    NSAssert((clazz == [DGLayoutXAxisAnchor class] ||
+              clazz == [DGLayoutYAxisAnchor class] ||
+              clazz == [DGLayoutDimension class]), nil);
+    id anchor = objc_getAssociatedObject(self, key);
+    if (!anchor) {
+        anchor = [[clazz alloc] init];
+        objc_setAssociatedObject(anchor, dg_layout_anchor_attribute, @(attr), OBJC_ASSOCIATION_COPY);
+        objc_setAssociatedObject(anchor, dg_layout_anchor_item, self, OBJC_ASSOCIATION_ASSIGN);
+        objc_setAssociatedObject(self, key, anchor, OBJC_ASSOCIATION_RETAIN);
+    }
+    return anchor;
+}
+
+#pragma mark - public
+- (DGLayoutXAxisAnchor *)dg_leadingAnchor {
+    return DGLayoutAnchorForView(DGLayoutXAxisAnchor, NSLayoutAttributeLeading);
+}
+
+- (DGLayoutXAxisAnchor *)dg_trailingAnchor {
+    return DGLayoutAnchorForView(DGLayoutXAxisAnchor, NSLayoutAttributeTrailing);
+}
+
+- (DGLayoutXAxisAnchor *)dg_leftAnchor {
+    return DGLayoutAnchorForView(DGLayoutXAxisAnchor, NSLayoutAttributeLeft);
+}
+
+- (DGLayoutXAxisAnchor *)dg_rightAnchor {
+    return DGLayoutAnchorForView(DGLayoutXAxisAnchor, NSLayoutAttributeRight);
+}
+
+- (DGLayoutYAxisAnchor *)dg_topAnchor {
+    return DGLayoutAnchorForView(DGLayoutYAxisAnchor, NSLayoutAttributeTop);
+}
+
+- (DGLayoutYAxisAnchor *)dg_bottomAnchor {
+    return DGLayoutAnchorForView(DGLayoutYAxisAnchor, NSLayoutAttributeBottom);
+}
+
+- (DGLayoutDimension *)dg_widthAnchor {
+    return DGLayoutAnchorForView(DGLayoutDimension, NSLayoutAttributeWidth);
+}
+
+- (DGLayoutDimension *)dg_heightAnchor {
+    return DGLayoutAnchorForView(DGLayoutDimension, NSLayoutAttributeHeight);
+}
+
+- (DGLayoutXAxisAnchor *)dg_centerXAnchor {
+    return DGLayoutAnchorForView(DGLayoutXAxisAnchor, NSLayoutAttributeCenterX);
+}
+
+- (DGLayoutYAxisAnchor *)dg_centerYAnchor {
+    return DGLayoutAnchorForView(DGLayoutYAxisAnchor, NSLayoutAttributeCenterY);
+}
+
+- (DGLayoutYAxisAnchor *)dg_firstBaselineAnchor {
+    return DGLayoutAnchorForView(DGLayoutYAxisAnchor, NSLayoutAttributeFirstBaseline);
+}
+
+- (DGLayoutYAxisAnchor *)dg_lastBaselineAnchor {
+    // NSLayoutAttributeLastBaseline = NSLayoutAttributeBaseline, but NSLayoutAttributeLastBaseline is available in iOS 8.0 and later.
+    return DGLayoutAnchorForView(DGLayoutYAxisAnchor, NSLayoutAttributeBaseline);
+}
+
+- (DGLayoutYAxisAnchor *)dg_baselineAnchor {
+    return self.dg_lastBaselineAnchor;
+}
+
+- (DGLayoutXAxisAnchor *)dg_leftMarginAnchor {
+    return DGLayoutAnchorForView(DGLayoutXAxisAnchor, NSLayoutAttributeLeftMargin);
+}
+
+- (DGLayoutXAxisAnchor *)dg_rightMarginAnchor {
+    return DGLayoutAnchorForView(DGLayoutXAxisAnchor, NSLayoutAttributeRightMargin);
+}
+
+- (DGLayoutYAxisAnchor *)dg_topMarginAnchor {
+    return DGLayoutAnchorForView(DGLayoutYAxisAnchor, NSLayoutAttributeTopMargin);
+}
+
+- (DGLayoutYAxisAnchor *)dg_bottomMarginAnchor {
+    return DGLayoutAnchorForView(DGLayoutYAxisAnchor, NSLayoutAttributeBottomMargin);
+}
+
+- (DGLayoutXAxisAnchor *)dg_leadingMarginAnchor {
+    return DGLayoutAnchorForView(DGLayoutXAxisAnchor, NSLayoutAttributeLeadingMargin);
+}
+
+- (DGLayoutXAxisAnchor *)dg_trailingMarginAnchor {
+    return DGLayoutAnchorForView(DGLayoutXAxisAnchor, NSLayoutAttributeTrailingMargin);
+}
+
+- (DGLayoutXAxisAnchor *)dg_centerXWithinMarginsAnchor {
+    return DGLayoutAnchorForView(DGLayoutXAxisAnchor, NSLayoutAttributeCenterXWithinMargins);
+}
+
+- (DGLayoutYAxisAnchor *)dg_centerYWithinMarginsAnchor {
+    return DGLayoutAnchorForView(DGLayoutYAxisAnchor, NSLayoutAttributeCenterYWithinMargins);
+}
+
+@end

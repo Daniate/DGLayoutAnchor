@@ -8,28 +8,21 @@
 
 #import <UIKit/UIKit.h>
 
-#if __ENVIRONMENT_IPHONE_OS_VERSION_MIN_REQUIRED__ >= 90000
-
-#define DGLayoutAnchor      NSLayoutAnchor
-#define DGLayoutXAxisAnchor NSLayoutXAxisAnchor
-#define DGLayoutYAxisAnchor NSLayoutYAxisAnchor
-#define DGLayoutDimension   NSLayoutDimension
-
-#else
+NS_ASSUME_NONNULL_BEGIN
 
 NS_CLASS_AVAILABLE_IOS(6_0)
 @interface DGLayoutAnchor<AnchorType> : NSObject
 /* These methods return an inactive constraint of the form thisAnchor = otherAnchor.
  */
-- (NSLayoutConstraint *)constraintEqualToAnchor:(DGLayoutAnchor<AnchorType> *)anchor;
-- (NSLayoutConstraint *)constraintGreaterThanOrEqualToAnchor:(DGLayoutAnchor<AnchorType> *)anchor;
-- (NSLayoutConstraint *)constraintLessThanOrEqualToAnchor:(DGLayoutAnchor<AnchorType> *)anchor;
+- (NSLayoutConstraint *)equalTo:(DGLayoutAnchor<AnchorType> *)anchor;
+- (NSLayoutConstraint *)greaterThanOrEqualTo:(DGLayoutAnchor<AnchorType> *)anchor;
+- (NSLayoutConstraint *)lessThanOrEqualTo:(DGLayoutAnchor<AnchorType> *)anchor;
 
 /* These methods return an inactive constraint of the form thisAnchor = otherAnchor + constant.
  */
-- (NSLayoutConstraint *)constraintEqualToAnchor:(DGLayoutAnchor<AnchorType> *)anchor constant:(CGFloat)c;
-- (NSLayoutConstraint *)constraintGreaterThanOrEqualToAnchor:(DGLayoutAnchor<AnchorType> *)anchor constant:(CGFloat)c;
-- (NSLayoutConstraint *)constraintLessThanOrEqualToAnchor:(DGLayoutAnchor<AnchorType> *)anchor constant:(CGFloat)c;
+- (NSLayoutConstraint *)equalTo:(DGLayoutAnchor<AnchorType> *)anchor constant:(CGFloat)c;
+- (NSLayoutConstraint *)greaterThanOrEqualTo:(DGLayoutAnchor<AnchorType> *)anchor constant:(CGFloat)c;
+- (NSLayoutConstraint *)lessThanOrEqualTo:(DGLayoutAnchor<AnchorType> *)anchor constant:(CGFloat)c;
 @end
 
 /* Axis-specific subclasses for location anchors: top/bottom, leading/trailing, baseline, etc.
@@ -41,6 +34,10 @@ NS_CLASS_AVAILABLE_IOS(6_0)
 @interface DGLayoutYAxisAnchor : DGLayoutAnchor<DGLayoutYAxisAnchor *>
 @end
 
+/* For UIViewController's topLayoutGuide and bottomLayoutGuide */
+@interface DGLayoutGuideAnchor : DGLayoutYAxisAnchor
+@end
+
 /* This layout anchor subclass is used for sizes (width & height).
  */
 @class DGLayoutDimension;
@@ -49,23 +46,25 @@ NS_CLASS_AVAILABLE_IOS(6_0)
 /* These methods return an inactive constraint of the form
  thisVariable = constant.
  */
-- (NSLayoutConstraint *)constraintEqualToConstant:(CGFloat)c;
-- (NSLayoutConstraint *)constraintGreaterThanOrEqualToConstant:(CGFloat)c;
-- (NSLayoutConstraint *)constraintLessThanOrEqualToConstant:(CGFloat)c;
+- (NSLayoutConstraint *)equalToConstant:(CGFloat)c;
+- (NSLayoutConstraint *)greaterThanOrEqualToConstant:(CGFloat)c;
+- (NSLayoutConstraint *)lessThanOrEqualToConstant:(CGFloat)c;
 
 /* These methods return an inactive constraint of the form
  thisAnchor = otherAnchor * multiplier.
  */
-- (NSLayoutConstraint *)constraintEqualToAnchor:(DGLayoutDimension *)anchor multiplier:(CGFloat)m;
-- (NSLayoutConstraint *)constraintGreaterThanOrEqualToAnchor:(DGLayoutDimension *)anchor multiplier:(CGFloat)m;
-- (NSLayoutConstraint *)constraintLessThanOrEqualToAnchor:(DGLayoutDimension *)anchor multiplier:(CGFloat)m;
+- (NSLayoutConstraint *)equalTo:(DGLayoutDimension *)anchor multiplier:(CGFloat)m;
+- (NSLayoutConstraint *)greaterThanOrEqualTo:(DGLayoutDimension *)anchor multiplier:(CGFloat)m;
+- (NSLayoutConstraint *)lessThanOrEqualTo:(DGLayoutDimension *)anchor multiplier:(CGFloat)m;
 
 /* These methods return an inactive constraint of the form
  thisAnchor = otherAnchor * multiplier + constant.
  */
-- (NSLayoutConstraint *)constraintEqualToAnchor:(DGLayoutDimension *)anchor multiplier:(CGFloat)m constant:(CGFloat)c;
-- (NSLayoutConstraint *)constraintGreaterThanOrEqualToAnchor:(DGLayoutDimension *)anchor multiplier:(CGFloat)m constant:(CGFloat)c;
-- (NSLayoutConstraint *)constraintLessThanOrEqualToAnchor:(DGLayoutDimension *)anchor multiplier:(CGFloat)m constant:(CGFloat)c;
+- (NSLayoutConstraint *)equalTo:(DGLayoutDimension *)anchor multiplier:(CGFloat)m constant:(CGFloat)c;
+- (NSLayoutConstraint *)greaterThanOrEqualTo:(DGLayoutDimension *)anchor multiplier:(CGFloat)m constant:(CGFloat)c;
+- (NSLayoutConstraint *)lessThanOrEqualTo:(DGLayoutDimension *)anchor multiplier:(CGFloat)m constant:(CGFloat)c;
 @end
 
-#endif
+NS_ASSUME_NONNULL_END
+
+//#endif
