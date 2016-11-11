@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "DGLayoutAnchor.h"
+
+@class DGLayoutXAxisAnchor, DGLayoutYAxisAnchor, DGLayoutDimension;
 
 NS_ASSUME_NONNULL_BEGIN
 

@@ -7,6 +7,7 @@
 //
 
 #import "UIView+DGLayoutAnchor.h"
+#import "DGLayoutAnchor.h"
 #import <objc/runtime.h>
 
 UIKIT_EXTERN const void *dg_layout_anchor_item;

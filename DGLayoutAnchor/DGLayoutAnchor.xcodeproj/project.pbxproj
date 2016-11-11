@@ -15,6 +15,11 @@
 		142534D81CC1F0AD0055FA2D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 142534D61CC1F0AD0055FA2D /* LaunchScreen.storyboard */; };
 		142534E11CC1F0EB0055FA2D /* UIView+DGLayoutAnchor.m in Sources */ = {isa = PBXBuildFile; fileRef = 142534E01CC1F0EB0055FA2D /* UIView+DGLayoutAnchor.m */; };
 		142534E41CC1F1300055FA2D /* DGLayoutAnchor.m in Sources */ = {isa = PBXBuildFile; fileRef = 142534E31CC1F1300055FA2D /* DGLayoutAnchor.m */; };
+		14734E801DD5BF6B00D9D56E /* TLBRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14734E7F1DD5BF6B00D9D56E /* TLBRViewController.m */; };
+		14734E831DD5BF7D00D9D56E /* TLBRMarginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14734E821DD5BF7D00D9D56E /* TLBRMarginViewController.m */; };
+		14734E891DD5BFE400D9D56E /* LGViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14734E881DD5BFE400D9D56E /* LGViewController.m */; };
+		14734E8E1DD5C6C500D9D56E /* AnimationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14734E8D1DD5C6C500D9D56E /* AnimationViewController.m */; };
+		14734E911DD5D79900D9D56E /* NavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14734E901DD5D79900D9D56E /* NavigationController.m */; };
 		14873EC91DD46E6700F7F41C /* UIViewController+DGLayoutAnchor.m in Sources */ = {isa = PBXBuildFile; fileRef = 14873EC81DD46E6700F7F41C /* UIViewController+DGLayoutAnchor.m */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +38,16 @@
 		142534E01CC1F0EB0055FA2D /* UIView+DGLayoutAnchor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+DGLayoutAnchor.m"; sourceTree = "<group>"; };
 		142534E21CC1F1300055FA2D /* DGLayoutAnchor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGLayoutAnchor.h; sourceTree = "<group>"; };
 		142534E31CC1F1300055FA2D /* DGLayoutAnchor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGLayoutAnchor.m; sourceTree = "<group>"; };
+		14734E7E1DD5BF6B00D9D56E /* TLBRViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLBRViewController.h; sourceTree = "<group>"; };
+		14734E7F1DD5BF6B00D9D56E /* TLBRViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLBRViewController.m; sourceTree = "<group>"; };
+		14734E811DD5BF7D00D9D56E /* TLBRMarginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLBRMarginViewController.h; sourceTree = "<group>"; };
+		14734E821DD5BF7D00D9D56E /* TLBRMarginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLBRMarginViewController.m; sourceTree = "<group>"; };
+		14734E871DD5BFE400D9D56E /* LGViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGViewController.h; sourceTree = "<group>"; };
+		14734E881DD5BFE400D9D56E /* LGViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGViewController.m; sourceTree = "<group>"; };
+		14734E8C1DD5C6C500D9D56E /* AnimationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimationViewController.h; sourceTree = "<group>"; };
+		14734E8D1DD5C6C500D9D56E /* AnimationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimationViewController.m; sourceTree = "<group>"; };
+		14734E8F1DD5D79900D9D56E /* NavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationController.h; sourceTree = "<group>"; };
+		14734E901DD5D79900D9D56E /* NavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationController.m; sourceTree = "<group>"; };
 		14873EC71DD46E6700F7F41C /* UIViewController+DGLayoutAnchor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+DGLayoutAnchor.h"; sourceTree = "<group>"; };
 		14873EC81DD46E6700F7F41C /* UIViewController+DGLayoutAnchor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+DGLayoutAnchor.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -71,12 +86,10 @@
 				142534CC1CC1F0AD0055FA2D /* AppDelegate.m */,
 				142534CE1CC1F0AD0055FA2D /* ViewController.h */,
 				142534CF1CC1F0AD0055FA2D /* ViewController.m */,
-				142534E21CC1F1300055FA2D /* DGLayoutAnchor.h */,
-				142534E31CC1F1300055FA2D /* DGLayoutAnchor.m */,
-				142534DF1CC1F0EB0055FA2D /* UIView+DGLayoutAnchor.h */,
-				142534E01CC1F0EB0055FA2D /* UIView+DGLayoutAnchor.m */,
-				14873EC71DD46E6700F7F41C /* UIViewController+DGLayoutAnchor.h */,
-				14873EC81DD46E6700F7F41C /* UIViewController+DGLayoutAnchor.m */,
+				14734E8F1DD5D79900D9D56E /* NavigationController.h */,
+				14734E901DD5D79900D9D56E /* NavigationController.m */,
+				14734E8A1DD5C03E00D9D56E /* VC */,
+				14734E8B1DD5C04B00D9D56E /* DGLayoutAnchor */,
 				142534D11CC1F0AD0055FA2D /* Main.storyboard */,
 				142534D41CC1F0AD0055FA2D /* Assets.xcassets */,
 				142534D61CC1F0AD0055FA2D /* LaunchScreen.storyboard */,
@@ -92,6 +105,34 @@
 				142534C91CC1F0AD0055FA2D /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		14734E8A1DD5C03E00D9D56E /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				14734E7E1DD5BF6B00D9D56E /* TLBRViewController.h */,
+				14734E7F1DD5BF6B00D9D56E /* TLBRViewController.m */,
+				14734E811DD5BF7D00D9D56E /* TLBRMarginViewController.h */,
+				14734E821DD5BF7D00D9D56E /* TLBRMarginViewController.m */,
+				14734E871DD5BFE400D9D56E /* LGViewController.h */,
+				14734E881DD5BFE400D9D56E /* LGViewController.m */,
+				14734E8C1DD5C6C500D9D56E /* AnimationViewController.h */,
+				14734E8D1DD5C6C500D9D56E /* AnimationViewController.m */,
+			);
+			name = VC;
+			sourceTree = "<group>";
+		};
+		14734E8B1DD5C04B00D9D56E /* DGLayoutAnchor */ = {
+			isa = PBXGroup;
+			children = (
+				142534E21CC1F1300055FA2D /* DGLayoutAnchor.h */,
+				142534E31CC1F1300055FA2D /* DGLayoutAnchor.m */,
+				142534DF1CC1F0EB0055FA2D /* UIView+DGLayoutAnchor.h */,
+				142534E01CC1F0EB0055FA2D /* UIView+DGLayoutAnchor.m */,
+				14873EC71DD46E6700F7F41C /* UIViewController+DGLayoutAnchor.h */,
+				14873EC81DD46E6700F7F41C /* UIViewController+DGLayoutAnchor.m */,
+			);
+			name = DGLayoutAnchor;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -168,8 +209,13 @@
 				142534D01CC1F0AD0055FA2D /* ViewController.m in Sources */,
 				142534E11CC1F0EB0055FA2D /* UIView+DGLayoutAnchor.m in Sources */,
 				142534CD1CC1F0AD0055FA2D /* AppDelegate.m in Sources */,
+				14734E801DD5BF6B00D9D56E /* TLBRViewController.m in Sources */,
 				142534CA1CC1F0AD0055FA2D /* main.m in Sources */,
 				14873EC91DD46E6700F7F41C /* UIViewController+DGLayoutAnchor.m in Sources */,
+				14734E891DD5BFE400D9D56E /* LGViewController.m in Sources */,
+				14734E8E1DD5C6C500D9D56E /* AnimationViewController.m in Sources */,
+				14734E911DD5D79900D9D56E /* NavigationController.m in Sources */,
+				14734E831DD5BF7D00D9D56E /* TLBRMarginViewController.m in Sources */,
 				142534E41CC1F1300055FA2D /* DGLayoutAnchor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
