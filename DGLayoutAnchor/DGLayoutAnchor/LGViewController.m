@@ -20,23 +20,23 @@
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
     
-    UIView *v5 = [UIView new];
-    v5.backgroundColor = [UIColor colorWithWhite:0 alpha:0.4f];
-    v5.translatesAutoresizingMaskIntoConstraints = NO;
-    [self.view addSubview:v5];
+    UIView *v = [UIView new];
+    v.backgroundColor = [UIColor colorWithWhite:0 alpha:0.4f];
+    v.translatesAutoresizingMaskIntoConstraints = NO;
+    [self.view addSubview:v];
     
-    NSLayoutConstraint *lc51 = [v5.dg_topAnchor equalTo:self.dg_topLayoutGuideBottomAnchor constant:10];
-    NSLayoutConstraint *lc52 = [v5.dg_leadingAnchor equalTo:self.view.dg_leadingMarginAnchor];
-    NSLayoutConstraint *lc53 = [self.dg_bottomLayoutGuideTopAnchor equalTo:v5.dg_bottomAnchor constant:10];
-    NSLayoutConstraint *lc54 = [v5.dg_trailingAnchor equalTo:self.view.dg_trailingMarginAnchor];
+    NSLayoutConstraint *lc1 = [v.dg_topAnchor equalTo:self.dg_topLayoutGuideBottomAnchor constant:10];
+    NSLayoutConstraint *lc2 = [v.dg_leadingAnchor equalTo:self.view.dg_leadingMarginAnchor];
+    NSLayoutConstraint *lc3 = [self.dg_bottomLayoutGuideTopAnchor equalTo:v.dg_bottomAnchor constant:10];
+    NSLayoutConstraint *lc4 = [v.dg_trailingAnchor equalTo:self.view.dg_trailingMarginAnchor];
     
 #ifdef __IPHONE_8_0
     if ([[UIDevice currentDevice].systemVersion compare:@"8.0.0" options:NSNumericSearch] != NSOrderedAscending) {
-        lc51.active = lc52.active = lc53.active = lc54.active = YES;
+        lc1.active = lc2.active = lc3.active = lc4.active = YES;
     } else {
 #endif
         [self.view addConstraints:@[
-                                    lc51, lc52, lc53, lc54
+                                    lc1, lc2, lc3, lc4
                                     ]];
 #ifdef __IPHONE_8_0
     }

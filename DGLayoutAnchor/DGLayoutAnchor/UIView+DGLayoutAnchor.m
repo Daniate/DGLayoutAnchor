@@ -19,9 +19,9 @@ UIKIT_EXTERN const void *dg_layout_anchor_attribute;
 
 #pragma mark - private
 - (DGLayoutAnchor *)_anchorWithClass:(Class)clazz key:(const void *)key attribute:(NSLayoutAttribute)attr {
-    NSAssert((clazz == [DGLayoutXAxisAnchor class] ||
-              clazz == [DGLayoutYAxisAnchor class] ||
-              clazz == [DGLayoutDimension class]), nil);
+    NSParameterAssert(clazz == [DGLayoutXAxisAnchor class] ||
+                      clazz == [DGLayoutYAxisAnchor class] ||
+                      clazz == [DGLayoutDimension class]);
     id anchor = objc_getAssociatedObject(self, key);
     if (!anchor) {
         anchor = [[clazz alloc] init];
